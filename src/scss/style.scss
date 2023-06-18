@@ -1,0 +1,94 @@
+.scrollup__wrapper {
+	position: fixed;
+	z-index : 50;
+	bottom  : 0;
+	width   : 100%;
+}
+
+.container_scrollup {
+	position: relative;
+}
+
+.scrollup {
+	position                 : absolute;
+	right                    : 0;
+	bottom                   : 10rem;
+	display                  : flex;
+	align-items              : center;
+	flex-direction           : row;
+	justify-content          : center;
+	width                    : 3rem;
+	height                   : 3rem;
+	padding                  : 0;
+	cursor                   : pointer;
+	transition               : transform 0.5s ease 0s;
+	transform                : translate(150%, 0);
+	opacity                  : 0.4;
+	border                   : none;
+	border-top-left-radius   : 0.3rem;
+	border-bottom-left-radius: 0.3rem;
+	background-color         : #7575ff;
+	box-shadow               : 0 0 7px 2px #6667ab;
+
+	&._show {
+		transition: transform opacity box-shadow 0.7s ease 0s;
+		transform : translateX(0);
+	}
+
+	&:focus,
+	&:hover {
+		transition: opacity box-shadow .3s ease 0s;
+		opacity   : 1;
+		outline   : none;
+		box-shadow: 0 0 7px 2px #7575ff;
+	}
+
+	@media (min-width: 1300px) {
+		right                    : 1.5rem;
+		bottom                   : 0;
+		transform                : translate(0, 150%);
+		border-top-right-radius  : 0.3rem;
+		border-bottom-left-radius: 0;
+	}
+
+	@media (min-width: 1462px) {
+		right    : -1.5rem;
+		transform: translate(100%, 150%);
+
+		&._show {
+			transform: translate(100%, 0);
+		}
+	}
+}
+
+.scrollup svg {
+	width     : 2.3rem;
+	height    : 2.3rem;
+	transition: transform 0.5s ease 0s;
+	fill      : #c2c2ff;
+
+	@media (min-width: 1259px) {
+		transform: translateY(-10%);
+	}
+}
+
+.scrollup:focus svg,
+.scrollup:hover svg {
+	transition: transform 0.5s ease 0s;
+	transform : translateY(-10%);
+
+	@media (min-width: 1259px) {
+		transform: translateY(-20%);
+	}
+}
+
+.vh {
+	position: absolute !important;
+	overflow: hidden;
+	clip    : rect(1px 1px 1px 1px);
+	clip    : rect(1px, 1px, 1px, 1px);
+	width   : 1px !important;
+	height  : 1px !important;
+	padding : 0 !important;
+	border  : 0 !important;
+}

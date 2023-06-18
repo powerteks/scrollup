@@ -1,0 +1,1 @@
+const sc = new ScrollUp();
